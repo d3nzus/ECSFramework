@@ -1,2 +1,2 @@
 # ECSFramework
-Custom ECS Framework in Java
+Custom ECS Framework
