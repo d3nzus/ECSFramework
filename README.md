@@ -14,11 +14,21 @@ development. No external dependencies, no build tool required — just `javac`.
 | Scheduling | Four fixed phases (`INPUT`, `UPDATE`, `RENDER`, `CLEANUP`) with priority ordering |
 | Services | Typed resources, queued event bus, game math, 2D transforms, fixed timestep, spatial hash |
 
-Packages:
+## Layout
 
-- `dev.d3nzus.ecs.core` — world, entities, pools, queries, commands, systems, resources, events
-- `dev.d3nzus.ecs.util` — `Vec2`, `Vec3`, `MathUtils`, `Transform2D`, `Parent`, `Time`, `FixedStepAccumulator`, `SpatialHash`
+```
+src/       — all core and utility Java sources
+examples/  — runnable demos and benchmark
+test/      — test suite and runner
+```
 
+Sources live directly in these three folders; there are no nested `dev/d3nzus/ecs`
+directories. Java packages are unchanged (`dev.d3nzus.ecs.core`,
+`dev.d3nzus.ecs.util`, `dev.d3nzus.ecs.examples`, `dev.d3nzus.ecs.tests`) —
+the build compiles an explicit file list, so source folders do not need to
+mirror package names. Core covers world, entities, pools, queries, commands,
+systems, resources and events; utilities cover `Vec2`, `Vec3`, `MathUtils`,
+`Transform2D`, `Parent`, `Time`, `FixedStepAccumulator` and `SpatialHash`.
 Utilities depend on core; core has no dependency on utilities.
 
 ## Build and run
